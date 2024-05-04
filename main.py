@@ -6,14 +6,14 @@ from ics import Calendar, Event
 from datetime import datetime, timedelta
 import json
 
-palm.configure(api_key=('Your_google_genai_api_key'))
+palm.configure(api_key=('AIzaSyDt0b1VBJqtVI_O18AtFDhyboTS8gOg_4g'))
 models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
 model = models[0].name
 print(model)
 
 # Streamlit app title and user input
-st.title("Travel Itinerary Generator")
-
+st.title("     :parachute: *Travel Itinerary Generator* :parachute:")
+st.write('\n')
 city = st.text_input("Enter the location you're visiting :")
 start_date = st.date_input("Select the start date for your trip:", value=datetime.today())
 
@@ -29,22 +29,29 @@ end_date = st.date_input("Select the end date for your trip:",
 # Calculate the number of days between start_date and end_date
 days = (end_date - start_date+timedelta(days=1)).days
 # days = st.number_input("Enter the number of days for your trip:", min_value=1, max_value=30)
-
+st.write('\n\n\n')
 # User preferences checkboxes
 st.write('\nChoose the type of attractions you prefer: ')
-restaurant = st.checkbox("Restaurants")
-museums = st.checkbox("Museums")
-outdoor = st.checkbox("Outdoor Activities")
-temple = st.checkbox("Temples")
-kids_friendly = st.checkbox("Good for Kids")
-nature = st.checkbox("Nature")
+checks=st.columns(6)
+with checks[0]:
+  restaurant = st.checkbox("Hotels")
+with checks[1]:
+  museums = st.checkbox("Museums")
+with checks[2]:
+  outdoor = st.checkbox("Outdoor Activities")
+with checks[3]:
+  temple = st.checkbox("Temples")
+with checks[4]:
+  kids_friendly = st.checkbox("Good for Kids")
+with checks[5]:
+  nature = st.checkbox("Nature")
 
 # Transport mode options
 transport_modes = st.multiselect(
     "Please Select your preferred modes of transport:",
     ["Bicycle", "Car", "Bus"]
 )
-
+st.write('\n\n\n\n')
 # Generate itinerary button
 if st.button("Generate Itinerary"):
     # Create a prompt based on user input
@@ -148,7 +155,7 @@ if st.button("Generate Itinerary"):
     # Initialize the map centered at a location
     import requests
 
-    api_key = 'your_geoapi_key'
+    api_key = 'e409fa3d804c41ae8e530f8e307ed513'
     address = city
     url = f'https://api.geoapify.com/v1/geocode/search?text={address}&apiKey={api_key}'
     geocode_response = requests.get(url).json()
