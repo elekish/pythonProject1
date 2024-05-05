@@ -1,3 +1,5 @@
+Check out our project presentation : https://www.canva.com/design/DAGERAKnfts/RTuP4ycYgyoArhkQQWheGw/edit?utm_content=DAGERAKnfts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 Are you tired of spending hours planning your perfect vacation? Look no further than the AI Travel Planner! Our advanced AI technology generates personalized travel recommendations based on your preferences, and time constraints, making travel planning a breeze. Check out some of our amazing features below:
 
 - User Input: Input your desired destination, travel dates, and preferences for sightseeing, adventure, relaxation, and more. Our AI collects information about your interests, and any specific requirements you might have.
