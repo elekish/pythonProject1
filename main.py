@@ -6,7 +6,7 @@ from ics import Calendar, Event
 from datetime import datetime, timedelta
 import json
 
-palm.configure(api_key=('AIzaSyDt0b1VBJqtVI_O18AtFDhyboTS8gOg_4g'))
+palm.configure(api_key=('YOUR_GOOGLE_AI_API'))
 models = [m for m in palm.list_models(
 ) if 'generateText' in m.supported_generation_methods]
 model = models[0].name
@@ -160,7 +160,7 @@ and 'location' fields. Keep descriptions concise.
     # Initialize the map centered at a location
     import requests
 
-    api_key = 'e409fa3d804c41ae8e530f8e307ed513'
+    api_key = 'YOUR_GEOAPIFY_KEY'
     address = city
     url = f'https://api.geoapify.com/v1/geocode/search?text={address}&apiKey={api_key}'
     geocode_response = requests.get(url).json()
